@@ -44,7 +44,7 @@ jobs:
     steps:
       - run:
           name: Run setup script
-          command: bash .circleci/setup-heroku.sh
+          command: bash /tmp/circleci-demo-java-spring/.circleci/setup-heroku.sh
 
       - add_ssh_keys:
           fingerprints:
