@@ -32,3 +32,10 @@ jobs:
       
       - store_artifacts:
           path: target/demo-java-spring-0.0.1-SNAPSHOT.jar
+
+  deployment:
+    staging:
+      branch: master
+      heroku:
+        appname: foo-bar-123
+
