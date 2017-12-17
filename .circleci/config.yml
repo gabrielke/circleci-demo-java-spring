@@ -68,7 +68,7 @@ jobs:
       - run:
           name: Deploy Master to Heroku
           command: |
-            git push --force git@heroku.com:$HEROKU_APP_NAME.git HEAD:refs/heads/master
+            git push --force git@heroku.com:akos-circleci-java.git HEAD:refs/heads/master
             heroku run python manage.py deploy
             heroku restart
                
