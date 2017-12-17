@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     
-    working_directory: ~/circleci-demo-java-spring
+    working_directory: /tmp/circleci-demo-java-spring
 
     docker:
       - image: circleci/openjdk:8-jdk-browsers
@@ -35,7 +35,7 @@ jobs:
 
   deploy:
 
-    working_directory: ~/circleci-demo-java-spring
+    working_directory: /tmp/circleci-demo-java-spring
 
     docker:
       - image: circleci/openjdk:8-jdk-browsers
@@ -45,9 +45,11 @@ jobs:
       - run:
           name: Run setup script
           command: bash .circleci/setup-heroku.sh
+
       - add_ssh_keys:
           fingerprints:
             - "fa:49:ca:3a:f3:48:9b:e5:02:f3:07:c3:4b:23:95:f4"
+
       - run:
           name: Deploy Master to Heroku
           command: |
