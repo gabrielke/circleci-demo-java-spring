@@ -43,7 +43,7 @@ jobs:
           name: Deploy Master to Heroku
           command: |
             git push --force git@heroku.com:akos-circleci-java.git HEAD:refs/heads/master
-            heroku restart
+            heroku restart akos-circleci-java 
 
   # deploy:
   #
