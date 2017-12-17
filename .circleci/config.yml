@@ -32,6 +32,12 @@ jobs:
       
       - store_artifacts:
           path: target/demo-java-spring-0.0.1-SNAPSHOT.jar
+	
+      - run: bash .circleci/setup-heroku.sh
+
+      - add_ssh_keys:
+          fingerprints:
+            - "fa:49:ca:3a:f3:48:9b:e5:02:f3:07:c3:4b:23:95:f4"
 
   deploy:
 
